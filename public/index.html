@@ -23,17 +23,24 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/prettify.js"></script>
   <script src="js/sigma_beauty.min.js"></script>
-  <script src="js/sigma_beauty.min.js"></script>
 </head>
 <body onload="prettyPrint();">
-      
   <div class="container">
 		<div class="span12 sigma-parent" id="sigma-example-parent">
+			<input type="hidden" value="false">
 			<div class="sigma-expand" id="sigma-example"></div>
 		</div>
 	</div>
 	<script src="js/sigma.parseGexf.js"></script>
 	<script type="text/javascript">
+		var nodes = null
+		$(function(){
+				//node click event
+				$("#sigma-example-parent").bind("mouseup",function(){
+						if(nodes != null)
+							alert(nodes)
+					});
+		});
 		function init() {
 			// Instanciate sigma.js and customize rendering :
 			var sigInst = sigma.init(document.getElementById('sigma-example')).drawingProperties({
@@ -55,12 +62,10 @@
 			// Parse a GEXF encoded file to fill the graph
 			// (requires "sigma.parseGexf.js" to be included)
 			sigInst.parseGexf('data/basic.gexf');
-
 			// Bind events :
 			sigInst.bind('overnodes',function(event){
-				var nodes = event.content;
 				var neighbors = {};
-				console.log(event);
+				nodes = event.content;
 
 				sigInst.iterEdges(function(e){
 					if(nodes.indexOf(e.source)>=0 || nodes.indexOf(e.target)>=0){
@@ -80,10 +85,13 @@
 				}).iterNodes(function(n){
 					n.hidden = 0;
 				}).draw(2,2,2);
+				nodes = null
 			})
+
 
 			// Draw the graph :
 			sigInst.draw();
+			
 		}
 
 		if (document.addEventListener) {
