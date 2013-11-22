@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns:viz="http:///www.gexf.net/1.1draft/viz" version="1.1" xmlns="http://www.gexf.net/1.1draft">
+	<meta lastmodifieddate="2010-05-29+01:27">
+	</meta>
+	<graph defaultedgetype="directed" idtype="string" type="static">
+	
+		<nodes>
+			<node id="0" label="Hello">
+				<attvalues>
+					<attvalue for="authority" value="0.01880342"/>
+					<attvalue for="hub" value="0.01880342"/>
+				</attvalues>
+				<viz:size value="20.142857"/>
+	
+			</node>
+
+			<node id="1" label="Word">
+				<attvalues>
+					<attvalue for="authority" value="0.01880342"/>
+					<attvalue for="hub" value="0.01880342"/>
+				</attvalues>
+				<viz:size value="20.142857"/>
+				<viz:color b="30" g="48" r="204"/>
+	
+			</node>
+
+			<node id="2" label="Word">
+				<attvalues>
+					<attvalue for="authority" value="0.01880342"/>
+					<attvalue for="hub" value="0.01880342"/>
+				</attvalues>
+				<viz:size value="20.142857"/>
+				<viz:color b="30" g="48" r="204"/>
+	
+
+			</node>
+
+			<node id="3" label="Word">
+				<attvalues>
+					<attvalue for="authority" value="0.01880342"/>
+					<attvalue for="hub" value="0.01880342"/>
+				</attvalues>
+				<viz:size value="20.142857"/>
+				<viz:color b="30" g="48" r="204"/>
+	
+			</node>
+
+		</nodes>
+		<edges>
+			<edge id="0" source="0" target="1"/>
+			<edge id="1" source="2" target="1"/>
+		</edges>
+	</graph>
+</gexf>
